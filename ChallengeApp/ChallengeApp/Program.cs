@@ -17,7 +17,6 @@ int figure7 = 0;
 int figure8 = 0;
 int figure9 = 0;
 
-
 foreach (var digit in digits)
 {
     if (digit == '0')
@@ -61,18 +60,16 @@ foreach (var digit in digits)
         figure9++;
     }
 }
-
-
 Console.WriteLine($"Liczba {number} zawiera");
-Console.WriteLine("0 => " + figure0);
-Console.WriteLine("1 => " + figure1);
-Console.WriteLine("2 => " + figure2);
-Console.WriteLine("3 => " + figure3);
-Console.WriteLine("4 => " + figure4);
-Console.WriteLine("5 => " + figure5);
-Console.WriteLine("6 => " + figure6);
-Console.WriteLine("7 => " + figure7);
-Console.WriteLine("8 => " + figure8);
-Console.WriteLine("9 => " + figure9);
+Console.WriteLine($"0 => {figure0}");
+Console.WriteLine($"1 => {figure1}");
+Console.WriteLine($"2 => {figure2}");
+Console.WriteLine($"3 => {figure3}");
+Console.WriteLine($"4 => {figure4}");
+Console.WriteLine($"5 => {figure5}");
+Console.WriteLine($"6 => {figure6}");
+Console.WriteLine($"7 => {figure7}");
+Console.WriteLine($"8 => {figure8}");
+Console.WriteLine($"9 => {figure9}");
 
 

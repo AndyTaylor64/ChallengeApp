@@ -1,38 +1,78 @@
-﻿//Deklaruję zmienne
-var name = 0;
-var sex1 = "Pan";
-var sex2 = "Pani";
-int lesson = 21; //na podstawie Wyxwanie 21 dni
-// Pokazuj nazwę ankety
-Console.WriteLine("Określenie poziomu wiedzy na podstawie Wyzwanie 21 dni");
-Console.WriteLine("-------------------------");
-Console.WriteLine(" ");
-Console.WriteLine("1.Andrei\n");
-Console.WriteLine("2.Ewa\r");
-Console.WriteLine(" ");
-//Poproś o wybranie imienia
+﻿long number = 0;
+Console.WriteLine("Policz ile jakich cyfr występuje w podanej liczbie");
 
-Console.WriteLine("Wybierz nazwisko i naciśnij Enter");
-name = Convert.ToInt32(Console.ReadLine());
-//name = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Proszę wpisać liszbę i naciśnąć Enter");
+number = Convert.ToInt64(Console.ReadLine());
+string numberInString = number.ToString(); 
+char[] digits = numberInString.ToArray(); //
 
-// Poproś o podanie numeru lekcji, której się uczy
-Console.WriteLine("Podaj numer lekcji, której się uczysz i naciśnij Enter");
-lesson = Convert.ToInt32(Console.ReadLine());
+int figure0 = 0;
+int figure1 = 0;
+int figure2 = 0;
+int figure3 = 0;
+int figure4 = 0;
+int figure5 = 0;
+int figure6 = 0;
+int figure7 = 0;
+int figure8 = 0;
+int figure9 = 0;
 
-if (name == 1 && lesson <= 21)
+
+foreach (var digit in digits)
 {
-    Console.WriteLine((sex1) + "Andrei jest początkującym programistą");
+    if (digit == '0')
+    {
+        figure0++;
+    }
+    if (digit == '1')
+    {
+        figure1++;
+    }
+    if (digit == '2')
+    {
+        figure2++;
+    }
+    if (digit == '3')
+    {
+        figure3++;
+    }
+    if (digit == '4')
+    {
+        figure4++;
+    }
+    if (digit == '5')
+    {
+        figure5++;
+    }
+    if (digit == '6')
+    {
+        figure6++;
+    }
+    if (digit == '7')
+    {
+        figure7++;
+    }
+    if (digit == '8')
+    {
+        figure8++;
+    }
+    if (digit == '9')
+    {
+        figure9++;
+    }
 }
-else if (name == 1 && lesson >= 21)
-{
-    Console.WriteLine((sex1) + "Andrei jest zaawansowanym programistą");
-}
-else if (name == 2 && lesson <= 21)
-{
-    Console.WriteLine((sex2) + "Ewa jest początkującą programistą");
-}
-else 
-{
-    Console.WriteLine((sex2) + "Ewa jest zaawansowaną programistą");
-}
+
+
+Console.WriteLine($"Liczba {number} zawiera");
+Console.WriteLine("0 => " + figure0);
+Console.WriteLine("1 => " + figure1);
+Console.WriteLine("2 => " + figure2);
+Console.WriteLine("3 => " + figure3);
+Console.WriteLine("4 => " + figure4);
+Console.WriteLine("5 => " + figure5);
+Console.WriteLine("6 => " + figure6);
+Console.WriteLine("7 => " + figure7);
+Console.WriteLine("8 => " + figure8);
+Console.WriteLine("9 => " + figure9);
+
+

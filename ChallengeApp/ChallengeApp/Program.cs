@@ -1,75 +1,56 @@
-﻿long number = 0;
-Console.WriteLine("Policz ile jakich cyfr występuje w podanej liczbie");
+﻿using ChallengeApp;
 
-Console.WriteLine("Proszę wpisać liszbę i naciśnąć Enter");
-number = Convert.ToInt64(Console.ReadLine());
-string numberInString = number.ToString(); 
-char[] digits = numberInString.ToArray(); //
+Employee adam = new Employee("Adam", "Kowalski", 25);
+Employee monika = new("Monika", "Tokarczyk", 28);
+var damian = new Employee("Damian", "Siewkowski", 30);
+//pierwszy tydzien
+adam.AddScore(15);
+monika.AddScore(2);
+damian.AddScore(3);
+//drugi tydzien
+adam.AddScore(4);
+monika.AddScore(3);
+damian.AddScore(6);
+//trzeci tydzien
+adam.AddScore(7);
+monika.AddScore(8);
+damian.AddScore(9);
+//czwarty tydzien
+adam.AddScore(4);
+monika.AddScore(7);
+damian.AddScore(5);
 
-int figure0 = 0;
-int figure1 = 0;
-int figure2 = 0;
-int figure3 = 0;
-int figure4 = 0;
-int figure5 = 0;
-int figure6 = 0;
-int figure7 = 0;
-int figure8 = 0;
-int figure9 = 0;
+var resultAdam = adam.Result;
+var resultMonika = monika.Result;
+var resultDamian = damian.Result;
 
-foreach (var digit in digits)
+HighResult(adam, monika, damian, resultAdam, resultMonika, resultDamian);
+
+static void HighResult(Employee adam, Employee monika, Employee damian, int resultAdam, int resultMonika, int resultDamian)
 {
-    if (digit == '0')
+    List<Employee> employeeList = new List<Employee>()
+{
+    adam,
+    monika,
+    damian
+};
+
+    int highestResult = -1;
+    Employee employeeWithHiestResult = null;
+
+    foreach (var employee in employeeList)
     {
-        figure0++;
+        if (employee.Result > highestResult)
+        {
+            employeeWithHiestResult = employee;
+            highestResult = employee.Result;
+        }
     }
-    if (digit == '1')
-    {
-        figure1++;
-    }
-    if (digit == '2')
-    {
-        figure2++;
-    }
-    if (digit == '3')
-    {
-        figure3++;
-    }
-    if (digit == '4')
-    {
-        figure4++;
-    }
-    if (digit == '5')
-    {
-        figure5++;
-    }
-    if (digit == '6')
-    {
-        figure6++;
-    }
-    if (digit == '7')
-    {
-        figure7++;
-    }
-    if (digit == '8')
-    {
-        figure8++;
-    }
-    if (digit == '9')
-    {
-        figure9++;
-    }
+
+    Console.WriteLine("{0} {1}, {2} lat, otrzymal {3} punktow", adam.Name, adam.Surname, adam.Age, resultAdam);
+    Console.WriteLine($"{monika.Name} {monika.Surname} otrzymala {resultMonika} punktow");
+    Console.WriteLine($"{damian.Name} {damian.Surname} otrzymal " + resultDamian + " punktow");
+    Console.WriteLine();
+    Console.WriteLine(employeeWithHiestResult.Name + " " + employeeWithHiestResult.Surname + 
+                        $" jest pracownikiem miesiaca z wynikem {highestResult}");
 }
-Console.WriteLine($"Liczba {number} zawiera");
-Console.WriteLine($"0 => {figure0}");
-Console.WriteLine($"1 => {figure1}");
-Console.WriteLine($"2 => {figure2}");
-Console.WriteLine($"3 => {figure3}");
-Console.WriteLine($"4 => {figure4}");
-Console.WriteLine($"5 => {figure5}");
-Console.WriteLine($"6 => {figure6}");
-Console.WriteLine($"7 => {figure7}");
-Console.WriteLine($"8 => {figure8}");
-Console.WriteLine($"9 => {figure9}");
-
-
